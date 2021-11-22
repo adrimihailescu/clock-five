@@ -10,8 +10,10 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				25+5 Clock
-				<Break />
-				<Session />
+				<div>
+					<Break />
+					<Session />
+				</div>
 				<Counter />
 			</header>
 		</div>
