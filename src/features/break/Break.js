@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment, selectCount } from "./counterSlice";
-import styles from "./Counter.module.css";
+import { decrement, increment, selectCount } from "./breakSlice";
 
 export function Break() {
 	const count = useSelector(selectCount);
@@ -10,17 +9,15 @@ export function Break() {
 		<div>
 			<div id="break-label" className="break">
 				<h2>Break lenght</h2>
-				<div className={styles.row}>
+				<div>
 					<button
-						className={styles.button}
 						aria-label="Decrement value"
 						onClick={() => dispatch(decrement())}
 					>
 						-
 					</button>
-					<span className={styles.value}>{count}</span>
+					<span>{count}</span>
 					<button
-						className={styles.button}
 						aria-label="Increment value"
 						onClick={() => dispatch(increment())}
 					>

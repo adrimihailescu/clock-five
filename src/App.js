@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Counter } from "./features/counter/Counter";
-import { Session } from "./features/counter/Session";
-import { Break } from "./features/counter/Break";
+import { Session } from "./features/session/Session";
+import { Break } from "./features/break/Break";
 import "./App.css";
 
 function App() {
