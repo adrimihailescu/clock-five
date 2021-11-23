@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { incrementByAmount } from "../counter/counterSlice";
 import { decrement, increment, selectCount } from "./sessionSlice";
 
 export function Session() {
