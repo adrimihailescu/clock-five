@@ -22,6 +22,6 @@ export const sessionSlice = createSlice({
 
 export const { increment, decrement } = sessionSlice.actions;
 
-export const selectCount = (state) => state.session.value;
+export const sessionLength = (state) => state.session.value;
 
 export default sessionSlice.reducer;

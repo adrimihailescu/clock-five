@@ -19,6 +19,6 @@ export const breakSlice = createSlice({
 
 export const { increment, decrement } = breakSlice.actions;
 
-export const selectCount = (state) => state.break.value;
+export const breakLength = (state) => state.break.value;
 
 export default breakSlice.reducer;

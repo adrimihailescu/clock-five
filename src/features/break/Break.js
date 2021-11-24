@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment, selectCount } from "./breakSlice";
+import { breakLength, decrement, increment } from "./breakSlice";
 
 export function Break() {
-	const count = useSelector(selectCount);
+	const breakLeng = useSelector(breakLength);
 	const dispatch = useDispatch();
 	return (
 		<div>
@@ -16,7 +16,7 @@ export function Break() {
 					>
 						-
 					</button>
-					<span>{count}</span>
+					<span>{breakLeng}</span>
 					<button
 						aria-label="Increment value"
 						onClick={() => dispatch(increment())}
