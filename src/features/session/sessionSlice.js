@@ -14,13 +14,13 @@ export const sessionSlice = createSlice({
 		decrement: (state) => {
 			state.value -= 1;
 		},
-		// incrementByAmount: (state, action) => {
-		// 	state.value += action.payload;
-		// },
+		toggleReset: (state) => {
+			state.value = 25;
+		},
 	},
 });
 
-export const { increment, decrement } = sessionSlice.actions;
+export const { increment, decrement, toggleReset } = sessionSlice.actions;
 
 export const sessionLength = (state) => state.session.value;
 
