@@ -1,30 +1,56 @@
-import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { breakLength, decrement, increment } from "./breakSlice";
+import {
+	CssBaseline,
+	Typography,
+	Container,
+	Button,
+	Paper,
+} from "@material-ui/core";
+import useStyles from "../styles";
 
 export function Break() {
+	const classes = useStyles();
 	const breakLeng = useSelector(breakLength);
 	const dispatch = useDispatch();
 	return (
-		<div>
-			<div id="break-label" className="break">
-				<h2>Break lenght</h2>
-				<div>
-					<button
-						aria-label="Decrement value"
-						onClick={() => dispatch(decrement())}
+		<>
+			<CssBaseline />
+			<Container maxWidth="sm" id="break-label" className={classes.container}>
+				<Paper className={classes.paper} elevation={24}>
+					<Typography
+						variant="h3"
+						align="center"
+						color="textPrimary"
+						gutterBottom
 					>
-						-
-					</button>
-					<span>{breakLeng}</span>
-					<button
-						aria-label="Increment value"
-						onClick={() => dispatch(increment())}
-					>
-						+
-					</button>
-				</div>
-			</div>
-		</div>
+						Break length
+					</Typography>
+					<div>
+						<Button
+							variant="contained"
+							size="small"
+							color="secondary"
+							aria-label="Decrement value"
+							onClick={() => dispatch(decrement())}
+						>
+							-
+						</Button>
+						<Typography component="span" className={classes.typography}>
+							{breakLeng}
+						</Typography>
+						<Button
+							variant="contained"
+							color="primary"
+							size="small"
+							aria-label="Increment value"
+							onClick={() => dispatch(increment())}
+						>
+							+
+						</Button>
+					</div>
+				</Paper>
+			</Container>
+		</>
 	);
 }

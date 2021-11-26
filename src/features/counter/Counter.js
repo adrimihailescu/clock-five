@@ -58,7 +58,7 @@ export function Counter() {
 	return (
 		<div>
 			<div>
-				<h2>Session</h2>
+				<h2>Timer</h2>
 				<p>
 					{minutes.toString().length === 1 ? `0${minutes}` : minutes}:
 					{seconds.toString().length === 1 ? `0${seconds}` : seconds}
