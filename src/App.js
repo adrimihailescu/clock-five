@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, CssBaseline, Paper } from "@material-ui/core";
 import { Counter } from "./features/counter/Counter";
 import { Session } from "./features/session/Session";
 import { Break } from "./features/break/Break";
@@ -10,23 +10,37 @@ function App() {
 	const classes = useStyles();
 	return (
 		<>
-			<Typography variant="h1" classes={classes.header}>
+			<CssBaseline />
+
+			<Typography variant="h1" className={classes.header}>
 				25+5 Clock
 			</Typography>
-			<Grid
-				container
-				direction="row"
-				justifyContent="center"
-				c
-				alognItems="center"
-				className="App"
-			>
-				<div>
-					<Break />
-					<Session />
-				</div>
-				<Counter />
-			</Grid>
+			<Paper className={classes.main} elevation={24}>
+				<Grid
+					container
+					direction="row"
+					alignItems="center"
+					className={classes.app}
+				>
+					<Grid container direction="row" className={classes.grid1}>
+						<Grid container direction="column" md={4} className={classes.break}>
+							<Break />
+						</Grid>
+						<Grid
+							container
+							direction="column"
+							md={4}
+							className={classes.session}
+						>
+							<Session />
+						</Grid>
+					</Grid>
+
+					<Grid container direction="row" className={classes.grid2}>
+						<Counter />
+					</Grid>
+				</Grid>
+			</Paper>
 		</>
 	);
 }

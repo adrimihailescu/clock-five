@@ -2,6 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { sessionLength, toggleReset } from "../session/sessionSlice";
 import { toggleTimer, toggleStop, counterIsCounting } from "./counterSlice";
+import {
+	CssBaseline,
+	Paper,
+	Typography,
+	Button,
+	ButtonGroup,
+	Grid,
+} from "@material-ui/core";
+import useStyles from "../styles";
 
 // source: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 function useInterval(callback, delay) {
@@ -25,6 +34,7 @@ function useInterval(callback, delay) {
 }
 
 export function Counter() {
+	const classes = useStyles();
 	const sessionLengthState = useSelector(sessionLength);
 	const counterIsCountingState = useSelector(counterIsCounting);
 	const dispatch = useDispatch();
@@ -56,32 +66,65 @@ export function Counter() {
 	}, [sessionLengthState]);
 
 	return (
-		<div>
-			<div>
-				<h2>Timer</h2>
-				<p>
-					{minutes.toString().length === 1 ? `0${minutes}` : minutes}:
-					{seconds.toString().length === 1 ? `0${seconds}` : seconds}
-				</p>
-
-				<button id="start_stop" onClick={() => dispatch(toggleTimer())}>
-					Play/Pause
-				</button>
-				<button id="start_stop" onClick={() => dispatch(toggleStop())}>
-					Stop Session
-				</button>
-				<button
-					id="reset"
-					onClick={() => {
-						dispatch(toggleReset());
-						dispatch(toggleStop());
-						setSeconds(0);
-						setMinutes(sessionLengthState);
-					}}
+		<>
+			<CssBaseline />
+			<Paper className={classes.paper} elevation={24}>
+				<Grid
+					container
+					direction="column"
+					justifyContent="center"
+					alignItems="center"
+					className={classes.grid}
 				>
-					Reset
-				</button>
-			</div>
-		</div>
+					<Grid direction="row">
+						<Typography variant="h2" className={classes.title}>
+							Timer
+						</Typography>
+					</Grid>
+					<Grid direction="row">
+						<Typography variant="h3" id="timer-label">
+							{minutes.toString().length === 1 ? `0${minutes}` : minutes}:
+							{seconds.toString().length === 1 ? `0${seconds}` : seconds}
+						</Typography>
+					</Grid>
+					<Grid>
+						<ButtonGroup>
+							<Button
+								variant="contained"
+								size="small"
+								color="primary"
+								id="start_stop"
+								onClick={() => dispatch(toggleTimer())}
+							>
+								Play/Pause
+							</Button>
+							<Button
+								variant="contained"
+								size="small"
+								color="primary"
+								id="start_stop"
+								onClick={() => dispatch(toggleStop())}
+							>
+								Stop
+							</Button>
+							<Button
+								variant="contained"
+								size="small"
+								color="primary"
+								id="reset"
+								onClick={() => {
+									dispatch(toggleReset());
+									dispatch(toggleStop());
+									setSeconds(0);
+									setMinutes(sessionLengthState);
+								}}
+							>
+								Reset
+							</Button>
+						</ButtonGroup>
+					</Grid>
+				</Grid>
+			</Paper>
+		</>
 	);
 }

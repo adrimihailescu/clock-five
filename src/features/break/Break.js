@@ -3,9 +3,9 @@ import { breakLength, decrement, increment } from "./breakSlice";
 import {
 	CssBaseline,
 	Typography,
-	Container,
 	Button,
 	Paper,
+	Grid,
 } from "@material-ui/core";
 import useStyles from "../styles";
 
@@ -16,17 +16,15 @@ export function Break() {
 	return (
 		<>
 			<CssBaseline />
-			<Container maxWidth="sm" id="break-label" className={classes.container}>
-				<Paper className={classes.paper} elevation={24}>
-					<Typography
-						variant="h3"
-						align="center"
-						color="textPrimary"
-						gutterBottom
-					>
-						Break length
-					</Typography>
-					<div>
+			{/* <Container maxWidth="sm" id="break-label" className={classes.container}> */}
+			<Paper className={classes.paper} elevation={24}>
+				<Grid container direction="column">
+					<Grid direction="row">
+						<Typography variant="h2" align="center" className={classes.title}>
+							Break length
+						</Typography>
+					</Grid>
+					<Grid>
 						<Button
 							variant="contained"
 							size="small"
@@ -48,9 +46,10 @@ export function Break() {
 						>
 							+
 						</Button>
-					</div>
-				</Paper>
-			</Container>
+					</Grid>
+				</Grid>
+			</Paper>
+			{/* </Container> */}
 		</>
 	);
 }

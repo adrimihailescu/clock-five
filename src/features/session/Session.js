@@ -1,12 +1,11 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
 	CssBaseline,
-	Container,
 	Button,
 	Typography,
 	Paper,
+	Grid,
 } from "@material-ui/core";
-import useTyle from "../styles";
 
 import { decrement, increment, sessionLength } from "./sessionSlice";
 import useStyles from "../styles";
@@ -18,13 +17,16 @@ export function Session() {
 	return (
 		<>
 			<CssBaseline />
-			<Container maxWidth="sm" id="session-label" className={classes.container}>
-				<Paper className={classes.paper} elevation={24}>
-					<Typography variant="h3" aligh="center" gutterBottom>
-						{" "}
-						Session length
-					</Typography>
-					<div>
+			{/* <Container maxWidth="sm" id="session-label" className={classes.container}> */}
+			<Paper className={classes.paper} elevation={24}>
+				<Grid container direction="column">
+					<Grid direction="row">
+						<Typography variant="h2" aligh="center" className={classes.title}>
+							{" "}
+							Session length
+						</Typography>
+					</Grid>
+					<Grid direction="row">
 						<Button
 							variant="contained"
 							size="small"
@@ -44,9 +46,10 @@ export function Session() {
 						>
 							+
 						</Button>
-					</div>
-				</Paper>
-			</Container>
+					</Grid>
+				</Grid>
+			</Paper>
+			{/* </Container> */}
 		</>
 	);
 }
