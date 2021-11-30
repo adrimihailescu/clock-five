@@ -11,36 +11,44 @@ function App() {
 	return (
 		<>
 			<CssBaseline />
-
-			<Typography variant="h1" className={classes.header}>
-				25+5 Clock
-			</Typography>
-			<Paper className={classes.main} elevation={24}>
-				<Grid
-					container
-					direction="row"
-					alignItems="center"
-					className={classes.app}
-				>
-					<Grid container direction="row" className={classes.grid1}>
-						<Grid container direction="column" md={4} className={classes.break}>
-							<Break />
+			{/* <Layout> */}
+			<main className={classes.clock}>
+				<Typography variant="h1" className={classes.header}>
+					25+5 Clock
+				</Typography>
+				<Paper className={classes.main} elevation={24}>
+					<Grid
+						container
+						direction="row"
+						alignItems="center"
+						className={classes.app}
+					>
+						<Grid container direction="row" className={classes.grid1}>
+							<Grid
+								container
+								direction="column"
+								md={4}
+								className={classes.break}
+							>
+								<Break />
+							</Grid>
+							<Grid
+								container
+								direction="column"
+								md={4}
+								className={classes.session}
+							>
+								<Session />
+							</Grid>
 						</Grid>
-						<Grid
-							container
-							direction="column"
-							md={4}
-							className={classes.session}
-						>
-							<Session />
+
+						<Grid container direction="row" className={classes.grid2}>
+							<Counter />
 						</Grid>
 					</Grid>
-
-					<Grid container direction="row" className={classes.grid2}>
-						<Counter />
-					</Grid>
-				</Grid>
-			</Paper>
+				</Paper>
+			</main>
+			{/* </Layout> */}
 		</>
 	);
 }

@@ -7,6 +7,8 @@ import {
 	Paper,
 	Grid,
 } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from "@material-ui/icons/Remove";
 import useStyles from "../styles";
 
 export function Break() {
@@ -25,26 +27,27 @@ export function Break() {
 						</Typography>
 					</Grid>
 					<Grid>
-						<Button
-							variant="contained"
-							size="small"
-							color="secondary"
-							aria-label="Decrement value"
-							onClick={() => dispatch(decrement())}
-						>
-							-
-						</Button>
 						<Typography component="span" className={classes.typography}>
 							{breakLeng}
 						</Typography>
-						<Button
-							variant="contained"
-							color="primary"
-							size="small"
-							aria-label="Increment value"
-							onClick={() => dispatch(increment())}
-						>
-							+
+					</Grid>
+					<Grid direction="row" spacing={4}>
+						<Button variant="outlined" size="small" color="secondary">
+							<RemoveIcon
+								aria-label="Decrement value"
+								onClick={() => dispatch(decrement())}
+							>
+								-
+							</RemoveIcon>
+						</Button>
+
+						<Button variant="outlined" color="primary" size="small">
+							<AddIcon
+								aria-label="Increment value"
+								onClick={() => dispatch(increment())}
+							>
+								+
+							</AddIcon>
 						</Button>
 					</Grid>
 				</Grid>

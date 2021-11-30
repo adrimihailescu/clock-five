@@ -10,6 +10,9 @@ import {
 	ButtonGroup,
 	Grid,
 } from "@material-ui/core";
+import PlayArrowIcon from "@material-ui/icons/PlayArrow";
+import StopIcon from "@material-ui/icons/Stop";
+import RefreshIcon from "@material-ui/icons/Refresh";
 import useStyles from "../styles";
 
 // source: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
@@ -82,44 +85,45 @@ export function Counter() {
 						</Typography>
 					</Grid>
 					<Grid direction="row">
-						<Typography variant="h3" id="timer-label">
+						<Typography
+							variant="h3"
+							id="timer-label"
+							className={classes.typography}
+						>
 							{minutes.toString().length === 1 ? `0${minutes}` : minutes}:
 							{seconds.toString().length === 1 ? `0${seconds}` : seconds}
 						</Typography>
 					</Grid>
 					<Grid>
 						<ButtonGroup>
-							<Button
-								variant="contained"
-								size="small"
-								color="primary"
-								id="start_stop"
-								onClick={() => dispatch(toggleTimer())}
-							>
-								Play/Pause
+							<Button variant="outlined" size="small" color="primary">
+								<PlayArrowIcon
+									id="start_stop"
+									onClick={() => dispatch(toggleTimer())}
+								>
+									Play/Pause
+								</PlayArrowIcon>
 							</Button>
-							<Button
-								variant="contained"
-								size="small"
-								color="primary"
-								id="start_stop"
-								onClick={() => dispatch(toggleStop())}
-							>
-								Stop
+							<Button variant="outlined" size="small" color="primary">
+								<StopIcon
+									id="start_stop"
+									onClick={() => dispatch(toggleStop())}
+								>
+									Stop
+								</StopIcon>
 							</Button>
-							<Button
-								variant="contained"
-								size="small"
-								color="primary"
-								id="reset"
-								onClick={() => {
-									dispatch(toggleReset());
-									dispatch(toggleStop());
-									setSeconds(0);
-									setMinutes(sessionLengthState);
-								}}
-							>
-								Reset
+							<Button variant="outlined" size="small" color="primary">
+								<RefreshIcon
+									id="reset"
+									onClick={() => {
+										dispatch(toggleReset());
+										dispatch(toggleStop());
+										setSeconds(0);
+										setMinutes(sessionLengthState);
+									}}
+								>
+									Reset
+								</RefreshIcon>
 							</Button>
 						</ButtonGroup>
 					</Grid>

@@ -1,17 +1,29 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-	container: {
-		padding: "40px",
-		display: "grid",
+	clock: {
+		backgroundcolor: "#55efc4",
+		backgroundImage: "linear-gradient(-315deg, #55efc4 0%, #000000 74%)",
+		minHeight: "100%",
+		width: "100%",
+		alignItems: "center",
+		justifyContent: "center",
+		fontFamily: "Orbitron, sans-serif",
+		// padding: "0",
+		// margin: "0",
 	},
-	button: {
-		padding: "10px",
-	},
+	// container: {
+	// 	padding: "40px",
+	// 	display: "grid",
+	// },
+
 	paper: {
-		border: "1px solid red",
+		border: "1px solid green",
+		borderRadius: "20px",
 		padding: "20px",
-		backgroundColor: "lightpink",
+		backgroundColor: "#7fcec5",
+		backgroundimage: "linear-gradient(-315deg, #7fcec5 0%, #14557b 74%)",
+
 		justifyContent: "center",
 		"&:hover": {
 			background: "lightgrey",
@@ -21,11 +33,17 @@ const useStyles = makeStyles((theme) => ({
 	typography: {
 		fontSize: "60px",
 		padding: "10px",
+		color: "green",
+		fontWeight: "500",
+		fontFamily: "Orbitron, sans-serif",
 	},
 	header: {
 		display: "grid",
 		alignItems: "center",
 		justifyContent: "center",
+		color: "limegreen",
+		fontFamily: "Orbitron, sans-serif",
+		paddingTop: "20px",
 	},
 	grid: {
 		display: "grid",
@@ -34,6 +52,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	title: {
 		fontSize: "40px",
+		color: "green",
+		fontWeight: "500",
+		fontFamily: "Orbitron, sans-serif",
 	},
 	timer: {
 		fontSize: "40px",
@@ -41,11 +62,10 @@ const useStyles = makeStyles((theme) => ({
 	main: {
 		display: "grid",
 		margin: "30px",
-		backgroundColor: "background-color: #fee2f8",
-		backgroundImage: "linear-gradient(315deg, #fee2f8 0%, #dcf8ef 74%)",
-		// paddingBottom: "20px",
+		backgroundcolor: "#55efc4",
+		backgroundImage: "linear-gradient(315deg, #55efc4 0%, #000000 74%)",
+		borderRadius: "20px",
 		alignItems: "center",
-		// justifyContent: "center",
 	},
 	app: {
 		textAlign: "center",
@@ -65,6 +85,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	session: {
 		padding: "10px",
+	},
+	button: {
+		justifyContent: "space-between",
 	},
 }));
 
