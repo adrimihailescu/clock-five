@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
 	CssBaseline,
 	Button,
+	ButtonGroup,
 	Typography,
 	Paper,
 	Grid,
@@ -30,18 +31,22 @@ export function Session() {
 					</Grid>
 					<Grid direction="row">
 						<Grid>
-							<Typography component="span" className={classes.typography}>
+							<Typography component="h3" className={classes.typography}>
 								{sessionLeng}
 							</Typography>
 						</Grid>
 						<Grid direction="row" className={classes.button}>
-							<Button variant="outlined" size="small" color="secondary">
-								<RemoveIcon onClick={() => dispatch(decrement())}>-</RemoveIcon>
-							</Button>
+							<ButtonGroup>
+								<Button variant="outlined" size="small" color="secondary">
+									<RemoveIcon onClick={() => dispatch(decrement())}>
+										-
+									</RemoveIcon>
+								</Button>
 
-							<Button variant="outlined" size="small" color="primary">
-								<AddIcon onClick={() => dispatch(increment())}>+</AddIcon>
-							</Button>
+								<Button variant="outlined" size="small" color="primary">
+									<AddIcon onClick={() => dispatch(increment())}>+</AddIcon>
+								</Button>
+							</ButtonGroup>
 						</Grid>
 					</Grid>
 				</Grid>

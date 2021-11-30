@@ -9,13 +9,9 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: "center",
 		justifyContent: "center",
 		fontFamily: "Orbitron, sans-serif",
-		// padding: "0",
-		// margin: "0",
+		padding: "0",
+		margin: "0",
 	},
-	// container: {
-	// 	padding: "40px",
-	// 	display: "grid",
-	// },
 
 	paper: {
 		border: "1px solid green",
@@ -26,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
 
 		justifyContent: "center",
 		"&:hover": {
-			background: "lightgrey",
+			backgroundColor: "#3bb78f",
+			backgroundimage: "linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)",
 		},
 		textAlign: "center",
 	},
@@ -38,17 +35,9 @@ const useStyles = makeStyles((theme) => ({
 		fontFamily: "Orbitron, sans-serif",
 	},
 	header: {
-		display: "grid",
-		alignItems: "center",
-		justifyContent: "center",
+		textAlign: "center",
 		color: "limegreen",
 		fontFamily: "Orbitron, sans-serif",
-		paddingTop: "20px",
-	},
-	grid: {
-		display: "grid",
-		padding: "20px",
-		justifyContent: "center",
 	},
 	title: {
 		fontSize: "40px",
@@ -78,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 	grid2: {
 		alignItems: "center",
 		justifyContent: "center",
-		padding: "10px",
+		padding: "20px",
 	},
 	break: {
 		padding: "10px",

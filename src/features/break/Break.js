@@ -4,6 +4,7 @@ import {
 	CssBaseline,
 	Typography,
 	Button,
+	ButtonGroup,
 	Paper,
 	Grid,
 } from "@material-ui/core";
@@ -18,7 +19,6 @@ export function Break() {
 	return (
 		<>
 			<CssBaseline />
-			{/* <Container maxWidth="sm" id="break-label" className={classes.container}> */}
 			<Paper className={classes.paper} elevation={24}>
 				<Grid container direction="column">
 					<Grid direction="row">
@@ -27,32 +27,33 @@ export function Break() {
 						</Typography>
 					</Grid>
 					<Grid>
-						<Typography component="span" className={classes.typography}>
+						<Typography component="h3" className={classes.typography}>
 							{breakLeng}
 						</Typography>
 					</Grid>
-					<Grid direction="row" spacing={4}>
-						<Button variant="outlined" size="small" color="secondary">
-							<RemoveIcon
-								aria-label="Decrement value"
-								onClick={() => dispatch(decrement())}
-							>
-								-
-							</RemoveIcon>
-						</Button>
+					<Grid direction="row">
+						<ButtonGroup>
+							<Button variant="outlined" size="small" color="secondary">
+								<RemoveIcon
+									aria-label="Decrement value"
+									onClick={() => dispatch(decrement())}
+								>
+									-
+								</RemoveIcon>
+							</Button>
 
-						<Button variant="outlined" color="primary" size="small">
-							<AddIcon
-								aria-label="Increment value"
-								onClick={() => dispatch(increment())}
-							>
-								+
-							</AddIcon>
-						</Button>
+							<Button variant="outlined" color="primary" size="small">
+								<AddIcon
+									aria-label="Increment value"
+									onClick={() => dispatch(increment())}
+								>
+									+
+								</AddIcon>
+							</Button>
+						</ButtonGroup>
 					</Grid>
 				</Grid>
 			</Paper>
-			{/* </Container> */}
 		</>
 	);
 }

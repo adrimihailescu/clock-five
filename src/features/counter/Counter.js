@@ -13,6 +13,7 @@ import {
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import StopIcon from "@material-ui/icons/Stop";
 import RefreshIcon from "@material-ui/icons/Refresh";
+import PauseIcon from "@material-ui/icons/Pause";
 import useStyles from "../styles";
 
 // source: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
@@ -96,22 +97,24 @@ export function Counter() {
 					</Grid>
 					<Grid>
 						<ButtonGroup>
-							<Button variant="outlined" size="small" color="primary">
-								<PlayArrowIcon
-									id="start_stop"
-									onClick={() => dispatch(toggleTimer())}
-								>
-									Play/Pause
-								</PlayArrowIcon>
+							<Button
+								id="start_stop"
+								variant="outlined"
+								size="small"
+								color="primary"
+								onClick={() => dispatch(toggleTimer())}
+							>
+								<PlayArrowIcon />
+								<PauseIcon>Play/Pause</PauseIcon>
 							</Button>
-							<Button variant="outlined" size="small" color="primary">
+							{/* <Button variant="outlined" size="small" color="primary">
 								<StopIcon
 									id="start_stop"
 									onClick={() => dispatch(toggleStop())}
 								>
 									Stop
 								</StopIcon>
-							</Button>
+							</Button> */}
 							<Button variant="outlined" size="small" color="primary">
 								<RefreshIcon
 									id="reset"
