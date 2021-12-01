@@ -19,11 +19,16 @@ export const counterSlice = createSlice({
 		toggleStop: (state) => {
 			state.isCounting = false;
 		},
+		toggleBreak: (state) => {
+			state.isBreak = !state.isBreak;
+		},
 	},
 });
 
-export const { toggleTimer, toggleStop, toggleSession } = counterSlice.actions;
+export const { toggleTimer, toggleStop, toggleSession, toggleBreak } =
+	counterSlice.actions;
 
 export const counterIsCounting = (state) => state.counter.isCounting;
+export const counterIsSession = (state) => state.counter.isSession;
 
 export default counterSlice.reducer;

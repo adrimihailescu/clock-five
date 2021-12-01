@@ -14,13 +14,13 @@ export const breakSlice = createSlice({
 		decrement: (state) => {
 			state.value -= 1;
 		},
-		toggleReset2: (state) => {
+		toggleReset: (state) => {
 			state.value = 5;
 		},
 	},
 });
 
-export const { increment, decrement, toggleReset2 } = breakSlice.actions;
+export const { increment, decrement, toggleReset } = breakSlice.actions;
 
 export const breakLength = (state) => state.break.value;
 

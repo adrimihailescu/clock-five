@@ -1,8 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { sessionLength, toggleReset } from "../session/sessionSlice";
-import { toggleTimer, toggleStop, counterIsCounting } from "./counterSlice";
-import { toggleReset2 } from "../break/breakSlice";
+import {
+	toggleTimer,
+	toggleStop,
+	toggleSession,
+	counterIsCounting,
+	counterIsSession,
+} from "./counterSlice";
+import {
+	sessionLength,
+	toggleReset as toggleResetSession,
+} from "../session/sessionSlice";
+import {
+	toggleReset as toggleResetBreak,
+	breakLength,
+} from "../break/breakSlice";
+
 import {
 	CssBaseline,
 	Paper,
@@ -12,7 +25,6 @@ import {
 	Grid,
 } from "@material-ui/core";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
-
 import RefreshIcon from "@material-ui/icons/Refresh";
 import PauseIcon from "@material-ui/icons/Pause";
 import useStyles from "../styles";
@@ -40,9 +52,13 @@ function useInterval(callback, delay) {
 
 export function Counter() {
 	const classes = useStyles();
+	const dispatch = useDispatch();
+
+	const isSession = useSelector(counterIsSession);
+	const breakLengthState = useSelector(breakLength);
 	const sessionLengthState = useSelector(sessionLength);
 	const counterIsCountingState = useSelector(counterIsCounting);
-	const dispatch = useDispatch();
+
 	const [seconds, setSeconds] = useState(0);
 	const [minutes, setMinutes] = useState(sessionLengthState);
 
@@ -50,25 +66,42 @@ export function Counter() {
 		() => {
 			if (minutes || seconds) {
 				if (seconds > 0) {
-					setSeconds(seconds - 1);
+					if (minutes === 0 && seconds === 1) {
+						if (isSession) {
+							setMinutes(sessionLengthState);
+						} else {
+							setMinutes(breakLengthState);
+						}
+						dispatch(toggleSession());
+						setSeconds(seconds - 1);
+					} else {
+						setSeconds(seconds - 1);
+					}
 				}
 				if (seconds === 0) {
-					if (minutes === 0) {
-						console.log("ran out of time");
-						dispatch(toggleStop());
-					} else {
-						setMinutes(minutes - 1);
-						setSeconds(59);
-					}
+					setMinutes(minutes - 1);
+					setSeconds(59);
 				}
 			}
 		},
 		counterIsCountingState ? 1000 : null
 	);
 
+	//Display the session lenght in the timer! this is the version that works!!!
 	useEffect(() => {
 		setMinutes(sessionLengthState);
 	}, [sessionLengthState]);
+
+	// useEffect(() => {
+	// 	if (setMinutes(sessionLengthState) === 0) {
+	// 		setMinutes(breakLengthState);
+	// 	} else {
+	// 		setMinutes(sessionLengthState);
+	// 	}
+	// }, [sessionLengthState, breakLengthState]);
+	// useEffect(() => {
+	// 	setMinutes(breakLengthState);
+	// }, [breakLengthState]);
 
 	return (
 		<>
@@ -120,9 +153,9 @@ export function Counter() {
 								<RefreshIcon
 									id="reset"
 									onClick={() => {
-										dispatch(toggleReset());
+										dispatch(toggleResetSession());
 										dispatch(toggleStop());
-										dispatch(toggleReset2());
+										dispatch(toggleResetBreak());
 										setSeconds(0);
 										setMinutes(sessionLengthState);
 									}}
