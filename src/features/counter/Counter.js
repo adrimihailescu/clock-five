@@ -11,7 +11,7 @@ import {
 	Grid,
 } from "@material-ui/core";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
-import StopIcon from "@material-ui/icons/Stop";
+
 import RefreshIcon from "@material-ui/icons/Refresh";
 import PauseIcon from "@material-ui/icons/Pause";
 import useStyles from "../styles";
