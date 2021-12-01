@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { sessionLength, toggleReset } from "../session/sessionSlice";
 import { toggleTimer, toggleStop, counterIsCounting } from "./counterSlice";
+import { toggleReset2 } from "../break/breakSlice";
 import {
 	CssBaseline,
 	Paper,
@@ -121,6 +122,7 @@ export function Counter() {
 									onClick={() => {
 										dispatch(toggleReset());
 										dispatch(toggleStop());
+										dispatch(toggleReset2());
 										setSeconds(0);
 										setMinutes(sessionLengthState);
 									}}
