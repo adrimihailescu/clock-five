@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
 	clock: {
 		backgroundcolor: "#55efc4",
 		backgroundImage: "linear-gradient(-315deg, #55efc4 0%, #000000 74%)",
@@ -45,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
 		fontWeight: "500",
 		fontFamily: "Orbitron, sans-serif",
 	},
+	titleBreak: {
+		color: "red",
+	},
 	timer: {
 		fontSize: "40px",
 	},
@@ -78,6 +81,6 @@ const useStyles = makeStyles((theme) => ({
 	button: {
 		justifyContent: "space-between",
 	},
-}));
+});
 
 export default useStyles;

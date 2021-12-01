@@ -92,17 +92,6 @@ export function Counter() {
 		setMinutes(sessionLengthState);
 	}, [sessionLengthState]);
 
-	// useEffect(() => {
-	// 	if (setMinutes(sessionLengthState) === 0) {
-	// 		setMinutes(breakLengthState);
-	// 	} else {
-	// 		setMinutes(sessionLengthState);
-	// 	}
-	// }, [sessionLengthState, breakLengthState]);
-	// useEffect(() => {
-	// 	setMinutes(breakLengthState);
-	// }, [breakLengthState]);
-
 	return (
 		<>
 			<CssBaseline />
@@ -115,8 +104,11 @@ export function Counter() {
 					className={classes.grid}
 				>
 					<Grid direction="row">
-						<Typography variant="h2" className={classes.title}>
-							Timer
+						<Typography
+							variant="h2"
+							className={isSession ? classes.title : classes.titleBreak}
+						>
+							{isSession ? "Session" : "Break"}
 						</Typography>
 					</Grid>
 					<Grid direction="row">
@@ -141,14 +133,7 @@ export function Counter() {
 								<PlayArrowIcon />
 								<PauseIcon>Play/Pause</PauseIcon>
 							</Button>
-							{/* <Button variant="outlined" size="small" color="primary">
-								<StopIcon
-									id="start_stop"
-									onClick={() => dispatch(toggleStop())}
-								>
-									Stop
-								</StopIcon>
-							</Button> */}
+
 							<Button variant="outlined" size="small" color="primary">
 								<RefreshIcon
 									id="reset"
