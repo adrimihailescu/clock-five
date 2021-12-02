@@ -43,7 +43,7 @@ function App() {
 						</Grid>
 
 						<Grid container direction="row" className={classes.grid2}>
-							<Grid container direction="column">
+							<Grid container direction="column" md={6}>
 								<Counter />
 							</Grid>
 						</Grid>

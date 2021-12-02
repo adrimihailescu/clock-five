@@ -33,7 +33,7 @@ const useStyles = makeStyles({
 	},
 	typography: {
 		fontSize: "60px",
-		padding: "10px",
+		// padding: "10px",
 		color: "green",
 		fontWeight: "500",
 		fontFamily: "Orbitron, sans-serif",
@@ -61,10 +61,12 @@ const useStyles = makeStyles({
 	main: {
 		display: "grid",
 		margin: "30px",
-		backgroundcolor: "#55efc4",
+		backgroundColor: "#55efc4",
 		backgroundImage: "linear-gradient(315deg, #55efc4 0%, #000000 74%)",
 		borderRadius: "20px",
 		alignItems: "center",
+		padding: "10px",
+		height: "100%",
 	},
 	app: {
 		textAlign: "center",
@@ -72,12 +74,12 @@ const useStyles = makeStyles({
 	grid1: {
 		justifyContent: "center",
 		alignItems: "center",
-		padding: "10px",
+		// padding: "10px",
 	},
 	grid2: {
 		alignItems: "center",
 		justifyContent: "center",
-		padding: "20px",
+		// padding: "10px",
 	},
 	break: {
 		padding: "10px",
