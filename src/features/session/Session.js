@@ -21,7 +21,7 @@ export function Session() {
 	return (
 		<>
 			<CssBaseline />
-			{/* <Container maxWidth="sm" id="session-label" className={classes.container}> */}
+
 			<Paper className={classes.paper} elevation={24}>
 				<Grid container direction="column">
 					<Grid direction="row">
@@ -57,7 +57,6 @@ export function Session() {
 					</Grid>
 				</Grid>
 			</Paper>
-			{/* </Container> */}
 		</>
 	);
 }
