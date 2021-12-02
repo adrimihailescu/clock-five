@@ -67,7 +67,7 @@ export function Counter() {
 			if (minutes || seconds) {
 				if (seconds > 0) {
 					if (minutes === 0 && seconds === 1) {
-						if (isSession) {
+						if (!isSession) {
 							setMinutes(sessionLengthState);
 						} else {
 							setMinutes(breakLengthState);
@@ -115,7 +115,7 @@ export function Counter() {
 						<Typography
 							variant="h3"
 							id="timer-label"
-							className={classes.typography}
+							className={isSession ? classes.typography : classes.count}
 						>
 							{minutes.toString().length === 1 ? `0${minutes}` : minutes}:
 							{seconds.toString().length === 1 ? `0${seconds}` : seconds}

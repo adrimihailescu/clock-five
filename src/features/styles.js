@@ -47,10 +47,15 @@ const useStyles = makeStyles({
 	},
 	titleBreak: {
 		color: "red",
+		// backgroundC0olor: "#4dccc6",
+		// backgroundImage: "linear-gradient(315deg, #4dccc6 0%, #96e4df 74%)",
 	},
-	timer: {
-		fontSize: "40px",
+	count: {
+		color: "red",
 	},
+	// timer: {
+	// 	fontSize: "40px",
+	// },
 	main: {
 		display: "grid",
 		margin: "30px",

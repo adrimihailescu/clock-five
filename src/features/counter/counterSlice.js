@@ -19,9 +19,9 @@ export const counterSlice = createSlice({
 		toggleStop: (state) => {
 			state.isCounting = false;
 		},
-		toggleBreak: (state) => {
-			state.isBreak = !state.isBreak;
-		},
+		// toggleBreak: (state) => {
+		// 	state.isBreak = !state.isBreak;
+		// },
 	},
 });
 
