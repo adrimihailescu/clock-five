@@ -11,7 +11,7 @@ function App() {
 	return (
 		<>
 			<CssBaseline />
-			{/* <Layout> */}
+
 			<main className={classes.clock}>
 				<Typography variant="h1" className={classes.header}>
 					25+5 Clock
@@ -43,12 +43,13 @@ function App() {
 						</Grid>
 
 						<Grid container direction="row" className={classes.grid2}>
-							<Counter />
+							<Grid container direction="column">
+								<Counter />
+							</Grid>
 						</Grid>
 					</Grid>
 				</Paper>
 			</main>
-			{/* </Layout> */}
 		</>
 	);
 }

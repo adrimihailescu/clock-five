@@ -111,7 +111,7 @@ export function Counter() {
 							{isSession ? "Session" : "Break"}
 						</Typography>
 					</Grid>
-					<Grid direction="row">
+					<Grid direction="row" className={classes.paperFix}>
 						<Typography
 							variant="h3"
 							id="timer-label"

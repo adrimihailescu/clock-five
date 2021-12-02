@@ -15,17 +15,21 @@ const useStyles = makeStyles({
 
 	paper: {
 		border: "1px solid green",
-		borderRadius: "20px",
+		borderRadius: "40px",
 		padding: "20px",
-		backgroundColor: "#7fcec5",
-		backgroundimage: "linear-gradient(-315deg, #7fcec5 0%, #14557b 74%)",
+		bbackgroundColor: "#9eabe4",
+		backgroundImage: "linear-gradient(315deg, #9eabe4 0%, #77eed8 74%)",
 
 		justifyContent: "center",
 		"&:hover": {
-			backgroundColor: "#3bb78f",
-			backgroundimage: "linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)",
+			backgroundColor: "#deebdd",
+			backgroundImage: "linear-gradient(315deg, #deebdd 0%, #bbdbbe 74%)",
 		},
 		textAlign: "center",
+	},
+	paperFix: {
+		// padding: "10px",
+		margin: "10px",
 	},
 	typography: {
 		fontSize: "60px",
@@ -47,8 +51,6 @@ const useStyles = makeStyles({
 	},
 	titleBreak: {
 		color: "red",
-		// backgroundC0olor: "#4dccc6",
-		// backgroundImage: "linear-gradient(315deg, #4dccc6 0%, #96e4df 74%)",
 	},
 	count: {
 		color: "red",
