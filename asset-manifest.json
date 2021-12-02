@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/clock-five/static/css/main.dd8765af.chunk.css",
-    "main.js": "/clock-five/static/js/main.77c68ee0.chunk.js",
-    "main.js.map": "/clock-five/static/js/main.77c68ee0.chunk.js.map",
+    "main.js": "/clock-five/static/js/main.6533f055.chunk.js",
+    "main.js.map": "/clock-five/static/js/main.6533f055.chunk.js.map",
     "runtime-main.js": "/clock-five/static/js/runtime-main.a7e772bf.js",
     "runtime-main.js.map": "/clock-five/static/js/runtime-main.a7e772bf.js.map",
-    "static/js/2.c185d954.chunk.js": "/clock-five/static/js/2.c185d954.chunk.js",
-    "static/js/2.c185d954.chunk.js.map": "/clock-five/static/js/2.c185d954.chunk.js.map",
+    "static/js/2.15d11bdb.chunk.js": "/clock-five/static/js/2.15d11bdb.chunk.js",
+    "static/js/2.15d11bdb.chunk.js.map": "/clock-five/static/js/2.15d11bdb.chunk.js.map",
     "index.html": "/clock-five/index.html",
     "static/css/main.dd8765af.chunk.css.map": "/clock-five/static/css/main.dd8765af.chunk.css.map",
-    "static/js/2.c185d954.chunk.js.LICENSE.txt": "/clock-five/static/js/2.c185d954.chunk.js.LICENSE.txt"
+    "static/js/2.15d11bdb.chunk.js.LICENSE.txt": "/clock-five/static/js/2.15d11bdb.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a7e772bf.js",
-    "static/js/2.c185d954.chunk.js",
+    "static/js/2.15d11bdb.chunk.js",
     "static/css/main.dd8765af.chunk.css",
-    "static/js/main.77c68ee0.chunk.js"
+    "static/js/main.6533f055.chunk.js"
   ]
 }
