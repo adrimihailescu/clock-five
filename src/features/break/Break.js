@@ -33,7 +33,12 @@ export function Break() {
 					</Grid>
 					<Grid direction="row">
 						<ButtonGroup>
-							<Button variant="outlined" size="small" color="secondary">
+							<Button
+								variant="outlined"
+								size="small"
+								color="secondary"
+								disabled={breakLeng === 1}
+							>
 								<RemoveIcon
 									aria-label="Decrement value"
 									onClick={() => dispatch(decrement())}

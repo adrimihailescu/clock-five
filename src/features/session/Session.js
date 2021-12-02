@@ -17,6 +17,7 @@ export function Session() {
 	const classes = useStyles();
 	const sessionLeng = useSelector(sessionLength);
 	const dispatch = useDispatch();
+
 	return (
 		<>
 			<CssBaseline />
@@ -37,7 +38,12 @@ export function Session() {
 						</Grid>
 						<Grid direction="row" className={classes.button}>
 							<ButtonGroup>
-								<Button variant="outlined" size="small" color="secondary">
+								<Button
+									variant="outlined"
+									size="small"
+									color="secondary"
+									disabled={sessionLeng === 1}
+								>
 									<RemoveIcon onClick={() => dispatch(decrement())}>
 										-
 									</RemoveIcon>
